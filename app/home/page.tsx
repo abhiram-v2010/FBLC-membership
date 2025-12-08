@@ -72,7 +72,6 @@ export default function HomePage() {
     setEditingId(a.id);
     setTitle(a.title);
     setBody(a.body);
-    setShowPortal(true);
   }
 
   function cancelEdit() {

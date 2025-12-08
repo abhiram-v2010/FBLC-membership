@@ -110,13 +110,6 @@ export default function Page() {
         <main className="min-h-screen flex items-center justify-center bg-black">
             <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{
-                    backgroundImage:
-                        "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.7)), url('/lead-the-way.png'), url('/lead-the-way.jpg')",
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
                 aria-hidden
             />
 
