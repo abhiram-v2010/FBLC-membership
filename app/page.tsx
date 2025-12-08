@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
 
 type View = "sign-in" | "sign-up" | "reset";
 
 export default function Page() {
+    const router = useRouter();
     const [view, setView] = useState<View>("sign-in");
 
     const [loading, setLoading] = useState(false);
@@ -34,8 +36,19 @@ export default function Page() {
                 body: JSON.stringify({ email, password }),
             });
             const body = await res.json().catch(() => null);
-            if (res.ok) setMessage(body?.message ?? "Signed in");
-            else setMessage(body?.message ?? "Sign in failed");
+            if (res.ok) {
+                const role = body?.role ?? "user";
+                try {
+                  localStorage.setItem("fblc_role", role);
+                  localStorage.setItem("fblc_email", email);
+                } catch (e) {
+                  // ignore storage errors
+                }
+                setMessage(body?.message ?? "Signed in");
+                // On successful demo login, navigate to the new home page
+                router.push("/home");
+                return;
+            } else setMessage(body?.message ?? "Sign in failed");
         } catch (err) {
             setMessage("Network error — please try again");
         } finally {

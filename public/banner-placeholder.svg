@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="500" viewBox="0 0 1600 500">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#g)" />
+  <g fill="rgba(255,255,255,0.9)">
+    <text x="60" y="180" font-size="72" font-family="Arial, Helvetica, sans-serif" font-weight="700">EMPOWERING FUTURE</text>
+    <text x="60" y="260" font-size="72" font-family="Arial, Helvetica, sans-serif" font-weight="700">BUSINESS LEADERS</text>
+  </g>
+  <text x="1400" y="80" font-size="20" fill="rgba(255,255,255,0.9)">Banner placeholder</text>
+</svg>
