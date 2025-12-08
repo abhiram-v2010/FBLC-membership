@@ -106,9 +106,21 @@ export default function Page() {
         }
     }
 
-  return (
-    <main className="min-h-screen flex items-center justify-center" style={{ background: "linear-gradient(135deg, #001E60 0%, #000000 100%)" }}>
-      <div className="relative z-10 w-full max-w-5xl mx-4 rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-r from-black/60 via-slate-900/60 to-black/60 backdrop-blur">
+    return (
+        <main className="min-h-screen flex items-center justify-center bg-black">
+            <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{
+                    backgroundImage:
+                        "linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.7)), url('/lead-the-way.png'), url('/lead-the-way.jpg')",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                }}
+                aria-hidden
+            />
+
+            <div className="relative z-10 w-full max-w-5xl mx-4 rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-r from-black/60 via-slate-900/60 to-black/60 backdrop-blur">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     <section className="p-8 md:p-12 text-white flex flex-col justify-center gap-6">
                         <h1 className="text-3xl sm:text-4xl font-bold">Membership Portal — Member Link</h1>
@@ -120,21 +132,15 @@ export default function Page() {
                         <nav className="flex gap-3 mt-2">
                             <button
                                 onClick={() => setView("sign-in")}
-                                className={`px-3 py-1 rounded-md ${view === "sign-in" ? "bg-blue-500" : "bg-white/10"}`}
+                                className={`px-3 py-1 ${view === "sign-in" ? "bg-blue-500" : "bg-white/10"}`}
                             >
                                 Sign in
                             </button>
                             <button
                                 onClick={() => setView("sign-up")}
-                                className={`px-3 py-1 rounded-md ${view === "sign-up" ? "bg-blue-500" : "bg-white/10"}`}
+                                className={`px-3 py-1 ${view === "sign-up" ? "bg-blue-500" : "bg-white/10"}`}
                             >
                                 Sign up
-                            </button>
-                            <button
-                                onClick={() => setView("reset")}
-                                className={`px-3 py-1 rounded-md ${view === "reset" ? "bg-blue-500" : "bg-white/10"}`}
-                            >
-                                Reset password
                             </button>
                         </nav>
                     </section>
@@ -151,7 +157,7 @@ export default function Page() {
                                             type="email"
                                             value={email}
                                             onChange={(e) => setEmail(e.target.value)}
-                                            placeholder="you@school.edu"
+                                            placeholder="fname.lname@gmail.com"
                                             className="w-full rounded-xl p-3 bg-white/10 text-white placeholder:text-slate-300 border border-white/10"
                                         />
 
@@ -280,7 +286,7 @@ export default function Page() {
                     </section>
                 </div>
             </div>
-            <div className="absolute bottom-6 text-center w-full z-20 text-white/75 text-sm">Need help? Contact your chapter admin.</div>
+            <div className="absolute bottom-6 text-center w-full z-20"></div>
         </main>
     );
 }
