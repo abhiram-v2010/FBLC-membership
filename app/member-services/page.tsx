@@ -11,8 +11,8 @@ export default function AspireLinkApplicationPortal() {
         </div>
       </header>
       <main className="flex flex-col items-center justify-center p-8 min-h-[calc(100vh-80px)]">
-        <h1 className="text-4xl font-bold text-white">EDUCATION HUB</h1>
-        <p className="mt-6 text-center max-w-xl text-white/80">Placeholder page for EDUCATION HUB.</p>
+        <h1 className="text-4xl font-bold text-white">MEMBER SERVICES</h1>
+        <p className="mt-6 text-center max-w-xl text-white/80">Placeholder page for MEMBER SERVICES.</p>
       </main>
     </div>
   );
