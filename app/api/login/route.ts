@@ -1,3 +1,5 @@
+import { NextResponse } from "next/server";
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -5,34 +7,46 @@ export async function POST(request: Request) {
 
     // Demo credentials for local testing
     if (email === "demo@fblc.test" && password === "password") {
-      return new Response(
-        JSON.stringify({ ok: true, message: "Demo login successful.", role: "user" }),
-        {
-          status: 200,
-          headers: { "content-type": "application/json" },
-        }
+      const response = NextResponse.json(
+        { ok: true, message: "Demo login successful.", role: "user" },
+        { status: 200 }
       );
+
+      response.cookies.set("auth_token", "demo-user-token", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        maxAge: 60 * 30, // 30 minutes
+        path: "/",
+      });
+      return response;
     }
 
     // Admin account (for posting announcements)
     if (email === "admin@fblc.test" && password === "adminpass") {
-      return new Response(
-        JSON.stringify({ ok: true, message: "Admin login successful.", role: "admin" }),
-        {
-          status: 200,
-          headers: { "content-type": "application/json" },
-        }
+      const response = NextResponse.json(
+        { ok: true, message: "Admin login successful.", role: "admin" },
+        { status: 200 }
       );
+
+      response.cookies.set("auth_token", "admin-user-token", {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        maxAge: 60 * 30, // 30 minutes
+        path: "/",
+      });
+      return response;
     }
 
-    return new Response(JSON.stringify({ ok: false, message: "Invalid credentials. Try demo@fblc.test / password" }), {
-      status: 401,
-      headers: { "content-type": "application/json" },
-    });
+    return NextResponse.json(
+      { ok: false, message: "Invalid credentials. Try demo@fblc.test / password" },
+      { status: 401 }
+    );
   } catch (err) {
-    return new Response(JSON.stringify({ ok: false, message: "Bad request" }), {
-      status: 400,
-      headers: { "content-type": "application/json" },
-    });
+    return NextResponse.json(
+      { ok: false, message: "Bad request" },
+      { status: 400 }
+    );
   }
 }

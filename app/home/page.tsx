@@ -10,7 +10,7 @@ const SUBPAGES = [
   ["Education Hub", "/education-hub"],
   ["Member Services Hub", "/member-services-hub"],
   ["Past Meetings Directory", "/past-meetings-directory"],
-  ["Quiz Hub", "/assessment-portal"]
+  ["Quiz Hub", "/quiz-hub"]
 ] as const;
 
 export default function HomePage() {
@@ -30,8 +30,13 @@ export default function HomePage() {
     }
   }, []);
 
-  function handleLogout() {
+  async function handleLogout() {
     try {
+      await fetch("/api/logout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+      });
+      
       localStorage.removeItem("fblc_role");
       localStorage.removeItem("fblc_email");
     } catch (e) {

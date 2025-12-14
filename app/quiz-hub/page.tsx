@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function AspireLinkApplicationPortal() {
+export default function QuizHub() {
   return (
     <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #001E60 0%, #000000 100%)" }}>
       <header className="w-full border-b border-white/10">

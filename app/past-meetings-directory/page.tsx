@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function AspireLinkApplicationPortal() {
+export default function PastMeets() {
   return (
     <div className="min-h-screen" style={{ background: "linear-gradient(135deg, #001E60 0%, #000000 100%)" }}>
       <header className="w-full border-b border-white/10">
@@ -11,8 +11,8 @@ export default function AspireLinkApplicationPortal() {
         </div>
       </header>
       <main className="flex flex-col items-center justify-center p-8 min-h-[calc(100vh-80px)]">
-        <h1 className="text-4xl font-bold text-white">MEMBER SERVICES</h1>
-        <p className="mt-6 text-center max-w-xl text-white/80">Placeholder page for MEMBER SERVICES.</p>
+        <h1 className="text-4xl font-bold text-white">PAST MEETINGS</h1>
+        <p className="mt-6 text-center max-w-xl text-white/80">Placeholder page for PAST MEETINGS.</p>
       </main>
     </div>
   );
