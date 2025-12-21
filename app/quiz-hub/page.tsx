@@ -13,7 +13,7 @@ export default function QuizHub() {
 
       <main className="max-w-5xl mx-auto p-8 min-h-[calc(100vh-80px)] flex flex-col items-center">
         <h1 className="text-4xl font-bold text-white">QUIZ HUB</h1>
-        <p className="mt-4 text-center max-w-xl text-white/80">Access quizzes and assessments below. Please follow the instructions after the form.</p>
+        <p className="mt-4 text-center max-w-xl text-white/80">Education Hub Quizzes here</p>
 
         <div className="w-full mt-8 bg-white border border-white/5 rounded-lg shadow-lg overflow-hidden p-6">
           <div className="max-w-full w-full">

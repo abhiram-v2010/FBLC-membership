@@ -10,7 +10,7 @@ const protectedRoutes = [
   "/quiz-hub",
 ];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // is current route a protected route
